@@ -370,3 +370,92 @@ Shows how long system has been running.
 - ps shows process information.
 - top shows real-time system usage.
 - Monitoring processes is critical in DevOps.
+---
+
+## Task 5: Networking Commands
+
+Networking is essential in DevOps for troubleshooting servers and services.
+
+---
+
+### Check IP Address
+
+Command:
+```bash
+ifconfig
+```
+
+Displays network interface configuration and local IP address.
+
+---
+
+### Test Connectivity
+
+Command:
+```bash
+ping google.com
+```
+
+Tests if a host is reachable.
+
+Press CTRL+C to stop.
+
+---
+
+### Check Website Response
+
+Command:
+```bash
+curl -I https://google.com
+```
+
+Displays HTTP response headers.
+
+Common status codes:
+- 200 = OK
+- 404 = Not Found
+- 500 = Server Error
+
+---
+
+### View Network Connections
+
+Command:
+```bash
+netstat -an
+```
+
+Shows active connections and listening ports.
+
+---
+
+### Check DNS Resolution
+
+Command:
+```bash
+nslookup google.com
+```
+
+Resolves domain names to IP addresses.
+
+---
+
+### View Default Gateway
+
+Command:
+```bash
+route -n get default
+```
+
+Shows routing information and default gateway.
+
+---
+
+## What I Learned
+
+- Networking commands help diagnose connectivity issues.
+- ping tests reachability.
+- curl checks web server responses.
+- netstat shows active connections.
+- DNS resolution is critical for services.
+- These commands are frequently used in production troubleshooting.
