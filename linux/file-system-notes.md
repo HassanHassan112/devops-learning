@@ -459,3 +459,77 @@ Shows routing information and default gateway.
 - netstat shows active connections.
 - DNS resolution is critical for services.
 - These commands are frequently used in production troubleshooting.
+## Task 5: Text Processing (grep, awk, sed, piping)
+# Text Processing Notes
+
+## grep – Search text
+
+Command:
+```bash
+grep "error" test-practise.txt
+```
+Searches for lines containing "error".
+
+Case-insensitive search:
+```bash
+grep -i "error" test-practise.txt
+```
+
+Count matches:
+```bash
+grep "error" test-practise.txt | wc -l
+```
+Counts the number of matching lines.
+
+---
+
+## awk – Extract data
+
+Command:
+```bash
+awk '{print $1}' test-practise.txt
+```
+Prints the first column of each line.
+
+Extract usernames from system file:
+```bash
+cat /etc/passwd | grep "/bin/bash" | awk -F: '{print $1}'
+```
+- `-F:` sets the field separator to `:`  
+- `$1` prints the first column (username)
+
+---
+
+## sed – Replace text
+
+Command:
+```bash
+sed 's/error/ERROR/g' test-practise.txt
+```
+Replaces all occurrences of "error" with "ERROR" in the output.
+
+Permanent in-place edit on macOS:
+```bash
+sed -i '' 's/error/ERROR/g' test-practise.txt
+```
+
+---
+
+## Piping – Combine commands
+
+Example:
+```bash
+cat test-practise.txt | grep "error" | awk '{print $2}'
+```
+- Finds lines containing "error"  
+- Prints the second word from those lines
+
+---
+
+## What I Learned
+
+- `grep` searches for specific text in files.  
+- `awk` extracts columns or fields from text.  
+- `sed` replaces or edits text.  
+- Piping (`|`) allows combining commands for complex queries.  
+- These commands are essential for analyzing logs, parsing files, and troubleshooting in DevOps.
