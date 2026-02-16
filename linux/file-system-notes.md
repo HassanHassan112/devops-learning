@@ -281,3 +281,92 @@ Owned by root, cannot be modified by normal users.
 - ls -l shows permissions and ownership.
 - Root owns critical system files.
 - Permissions are essential for system security.
+---
+
+## Task 4: Processes and System Monitoring
+
+Processes are running programs in Linux/macOS.
+
+---
+
+### View Running Processes
+
+Command:
+```bash
+ps
+```
+
+Shows processes running in current terminal.
+
+---
+
+### View All Processes
+
+Command:
+```bash
+ps aux
+```
+
+Shows all running processes.
+
+Important columns:
+- PID = Process ID
+- USER = owner
+- %CPU = CPU usage
+- %MEM = memory usage
+
+---
+
+### Real-Time Monitoring
+
+Command:
+```bash
+top
+```
+
+Shows live CPU and memory usage.
+
+Press `q` to exit.
+
+---
+
+### Find Specific Process
+
+Command:
+```bash
+ps aux | grep zsh
+```
+
+Searches for specific process.
+
+---
+
+### View Shell Process ID
+
+Command:
+```bash
+echo $$
+```
+
+Shows current shell PID.
+
+---
+
+### View System Uptime
+
+Command:
+```bash
+uptime
+```
+
+Shows how long system has been running.
+
+---
+
+## What I Learned
+
+- Processes are running programs.
+- Each process has a unique PID.
+- ps shows process information.
+- top shows real-time system usage.
+- Monitoring processes is critical in DevOps.
