@@ -88,3 +88,101 @@ Shows the present working directory. This helps identify where you are in the fi
 - `whoami` confirms the current user.
 - `pwd` confirms the current working directory.
 - These commands are essential for system administration and DevOps workflows.
+
+- ---
+
+## Task 2: File System Navigation
+
+This section covers directory navigation, file creation, file management, and viewing system files.
+
+---
+
+### Navigate to System Logs
+
+**Command:**
+```bash
+cd /var/log
+ls -lah
+pwd
+```
+
+**Explanation:**
+- `cd /var/log` → Change directory to system log folder
+- `ls -lah` → List files with detailed info (permissions, size, owner)
+- `pwd` → Confirm current working directory
+
+Observed many system logs owned by root and system services.
+
+---
+
+### Create and Manage Files
+
+**Commands Used:**
+```bash
+cd ~/devops-learning
+touch test.txt
+mkdir -p projects/demo
+```
+
+**Explanation:**
+- `touch test.txt` → Create empty file
+- `mkdir -p projects/demo` → Create nested directories
+
+---
+
+### Copy, Move and Delete Files
+
+Initially attempted:
+
+```bash
+mv projects/demo/test.txt projects/demo/backup.txt
+```
+
+Received error:
+```
+No such file or directory
+```
+
+Reason:
+The file had not yet been copied into the directory.
+
+Correct sequence:
+
+```bash
+cp test.txt projects/demo/
+mv projects/demo/test.txt projects/demo/backup.txt
+rm projects/demo/backup.txt
+```
+
+**Explanation:**
+- `cp` copies file
+- `mv` renames/moves file
+- `rm` removes file
+
+---
+
+### View System Files
+
+**Commands:**
+```bash
+cat /etc/passwd
+head -n 20 /etc/services
+```
+
+**Explanation:**
+- `/etc/passwd` → Contains system user account information
+- `head -n 20` → Displays first 20 lines of a file
+
+Observed:
+Many system service accounts (e.g., _sshd, _www, _postgres, etc.)
+
+---
+
+## What I Learned
+
+- Always verify file location before moving it.
+- Errors like "No such file or directory" usually indicate incorrect path or missing file.
+- File operations follow a logical flow: create → copy → move → delete.
+- System files like `/etc/passwd` are important for user management.
+- Careful reading of error messages is critical in DevOps work.
+
