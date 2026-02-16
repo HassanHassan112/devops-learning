@@ -186,3 +186,98 @@ Many system service accounts (e.g., _sshd, _www, _postgres, etc.)
 - System files like `/etc/passwd` are important for user management.
 - Careful reading of error messages is critical in DevOps work.
 
+---
+
+## Task 3: Permissions and Ownership
+
+Linux controls access to files using permissions and ownership.
+
+---
+
+### View File Permissions
+
+Command:
+```bash
+ls -l permissions.txt
+```
+
+Example output:
+```
+-rw-r--r-- permissions.txt
+```
+
+Explanation:
+- Owner can read and write
+- Group can read
+- Others can read
+
+---
+
+### Change Permissions
+
+Command:
+```bash
+chmod 600 permissions.txt
+```
+
+Result:
+```
+-rw-------
+```
+
+Explanation:
+Only owner can read and write.
+
+---
+
+Command:
+```bash
+chmod 644 permissions.txt
+```
+
+Result:
+```
+-rw-r--r--
+```
+
+Explanation:
+Owner can read/write, others read-only.
+
+---
+
+### Make File Executable
+
+Command:
+```bash
+chmod +x permissions.txt
+```
+
+Result:
+```
+-rwxr-xr-x
+```
+
+Explanation:
+File is now executable.
+
+---
+
+### Check System File Permissions
+
+Command:
+```bash
+ls -l /etc/passwd
+```
+
+Observed:
+Owned by root, cannot be modified by normal users.
+
+---
+
+## What I Learned
+
+- Linux uses permissions to control file access.
+- chmod modifies file permissions.
+- ls -l shows permissions and ownership.
+- Root owns critical system files.
+- Permissions are essential for system security.
